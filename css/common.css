@@ -1,0 +1,153 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img, abbr, acronym {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a, img, button, input, textarea {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body{font-family: '微软雅黑';}
+/*头部公共样式*/
+.header{
+    background-color: #d2a05b;
+    width: 100%;
+    height: 58px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: hidden;
+}
+.of-h44{
+    height: 58px;
+}
+.of-h45{
+    height: 45px;
+}
+.of-h47{
+    height: 47px;
+}
+.head-mid-word{
+    padding: 17px 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+}
+.head-left{
+    width: 10%;
+    height: 21px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    background: url("../images/icon-rtn.png") left center no-repeat;
+}
+.head-right{
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+}
+
+/*公共空格线*/
+.of-h6{
+    width: 100%;
+    height: 6px;
+}
+.grey{
+    background-color: #e9e9e9;
+}
+
+/*下拉刷新的公共样式*/
+.pull{
+    padding: 3px 15px;
+    overflow: hidden;
+}
+.pullIcon{
+    width: 30px;
+    height: 30px;
+    float: left;
+    display: block;
+    background: url("../images/pull-icon.png") center top no-repeat;
+    background-size: 100% 200%;
+    margin-top: 6px;
+    -webkit-transition: all 200ms;
+}
+.pullWord{
+    width: 70%;
+    float: left;
+    padding: 10px;
+    display: block;
+    font-size: 10px;
+}
+/*上拉加载更多的公共样式*/
+.push{
+    padding: 3px 15px;
+    overflow: hidden;
+}
+.pushIcon{
+    width: 30px;
+    height: 30px;
+    float: left;
+    display: block;
+    background: url("../images/pull-icon.png") no-repeat;
+    background-position: center top;
+    background-size: 100% 200%;
+    margin-top: 6px;
+    -webkit-transform: rotate(-180deg);
+    -webkit-transition: all 200ms;
+}
+.pushWord{
+    width: 70%;
+    float: left;
+    padding: 10px;
+    display: block;
+    font-size: 10px;
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title></title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="js/push_center.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="check-pop">
+    <div class="pop-content1">
+        <a class="cancel">取消</a>
+        <p class="pop-top">请输入回执</p>
+        <a class="sure">确定</a>
+        <textarea class="receipt-content" placeholder="当前对账单仍有疑问？输入回执吧！">
+
+        </textarea>
+    </div>
+    <div class="pop-content">
+       <p class="pop-top">是否确定当前对账单?</p>
+        <ul>
+            <li class="active">
+                <div><p>确定</p></div>
+            </li>
+            <li>
+                <div><p>不确定</p></div>
+            </li>
+        </ul>
+        <button class="cancel-btn">取消</button>
+    </div>
+
+</div>
+<div class="header">
+    <a class="head-left"></a>
+    <p class="head-mid-word">对账单详情</p>
+    <a class="head-right" onclick="popBg()">确认</a>
+</div>
+<div class="of-h44"></div>
+<div class="push-mid-content" id="moveModule">
+    <div class="pull">
+        <span class="pullIcon"></span>
+        <span class="pullWord">下拉刷新...</span>
+    </div>
+    <input type="hidden" id="lastAPNsID" /> <!-- 记录最后一个推送ID -->
+    <input type="hidden" id="type" /> <!-- 记录当前推送类型 -->
+    <div id="list">
+        <table  class="check-tab">
+            <thead>
+                <th>订单号</th>
+                <th>数量</th>
+                <th>总金额</th>
+            </thead>
+            <tr>
+                <td>1234567890</td>
+                <td>13</td>
+                <td>12310</td>
+            </tr>
+            <tr>
+                <td>1234567890</td>
+                <td>26</td>
+                <td>26359</td>
+            </tr>
+            <tr>
+                <td>1234567890</td>
+                <td>30</td>
+                <td>17567</td>
+            </tr>
+            <tfoot>
+                <td>小计</td>
+                <td>69</td>
+                <td>56236</td>
+            </tfoot>
+        </table>
+        <div class="push">
+            <span class="pushIcon"></span>
+            <span class="pushWord">下拉加载更多</span>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/push_center.js" type="text/javascript"></script>
+<script src="js/component.js" type="text/javascript"></script>
+</html>
