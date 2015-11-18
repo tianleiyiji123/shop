@@ -10,7 +10,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="js/jquery.js" type="text/javascript"></script>
 </head>
-<body>
+<body >
 <div class="check-pop">
     <button class="sub-btn" id="sub-btn">完成</button>
 </div>
@@ -59,110 +59,132 @@
 </div>
 <div class="of-h45"></div>
 <div class="of-h6 grey"></div>
+<!--<div class="wrap" style="position: absolute; top: 110px; bottom: 0; left: 0;overflow: scroll;">-->
+    <div class="push-mid-content" id="moveModule">
+        <div class="pull">
+            <span class="pullIcon"></span>
+            <span class="pullWord">下拉刷新...</span>
+        </div>
 
-<div class="push-mid-content" id="moveModule">
-    <div class="pull">
-        <span class="pullIcon"></span>
-        <span class="pullWord">下拉刷新...</span>
-    </div>
+        <input type="hidden" id="lastCommodityID">
+        <ul id="list">
+            <li>
+                <div class="activity-list">
+                    <div class="activity-tit">
+                        <p>活动标题:聚划算</p>
 
-    <input type="hidden" id="lastCommodityID">
-    <ul id="list">
-        <li>
-            <div class="activity-list">
-                <div class="activity-tit">
-                    <p>活动标题:聚划算</p>
+                        <p class="activity-icon-sign">可报名</p>
+                    </div>
+                    <div class="activity-list-time activity-space-20">
+                        <p>开始时间:<span>2015-10-01</span></p>
 
-                    <p class="activity-icon-sign">可报名</p>
-                </div>
-                <div class="activity-list-time activity-space-20">
-                    <p>开始时间:<span>2015-10-01</span></p>
-
-                    <p>结束时间:<span>2015-10-11</span></p>
-                </div>
-            </div>
-            <div class="of-h6 grey"></div>
-        </li>
-
-        <li>
-            <div class="activity-list">
-                <div class="activity-tit">
-                    <p>活动标题:聚划算</p>
-
-                    <p class="activity-icon-hassign">已报名</p>
-                </div>
-                <h3 class="act-tol-title">参加活动的商品</h3>
-
-                <div class="activity-list-time activity-space-5">
-                    <p>开始时间:<span>2015-10-01</span></p>
-
-                    <p>结束时间:<span>2015-10-11</span></p>
-                </div>
-
-                <div class="has-activity-detail">
-                    <img src="images/activity-eg.png">
-
-                    <div class="has-act-detail-right">
-                        <h3>一字肩2015秋冬新款婚纱礼服白色</h3>
-
-                        <p>货号：X14DH178</p>
-
-                        <p>报名费用：6000</p>
-
-                        <p>件数：300</p>
-
-                        <p>总费用：1800000</p>
+                        <p>结束时间:<span>2015-10-11</span></p>
                     </div>
                 </div>
-                <div class="act-good-num">
-                    <p>每件SKU产生的销售数量</p>
-                    <span>632</span>
-                </div>
-            </div>
-            <div class="of-h6 grey"></div>
-        </li>
+                <div class="of-h6 grey"></div>
+            </li>
 
-        <li>
-            <div class="activity-list">
-                <div class="activity-tit">
-                    <p>活动标题:聚划算</p>
+            <li>
+                <div class="activity-list">
+                    <div class="activity-tit">
+                        <p>活动标题:聚划算</p>
 
-                    <p class="activity-icon-outdate">可报名</p>
-                </div>
-                <div class="activity-list-time activity-space-20">
-                    <p>开始时间:<span>2015-10-01</span></p>
+                        <p class="activity-icon-hassign">已报名</p>
+                    </div>
+                    <h3 class="act-tol-title">参加活动的商品</h3>
 
-                    <p>结束时间:<span>2015-10-11</span></p>
+                    <div class="activity-list-time activity-space-5">
+                        <p>开始时间:<span>2015-10-01</span></p>
+
+                        <p>结束时间:<span>2015-10-11</span></p>
+                    </div>
+
+                    <div class="has-activity-detail">
+                        <img src="images/activity-eg.png">
+
+                        <div class="has-act-detail-right">
+                            <h3>一字肩2015秋冬新款婚纱礼服白色</h3>
+
+                            <p>货号：X14DH178</p>
+
+                            <p>报名费用：6000</p>
+
+                            <p>件数：300</p>
+
+                            <p>总费用：1800000</p>
+                        </div>
+                    </div>
+                    <div class="act-good-num">
+                        <p>每件SKU产生的销售数量</p>
+                        <span>632</span>
+                    </div>
                 </div>
-            </div>
-            <div class="of-h6 grey"></div>
-        </li>
-    </ul>
-    <div class="push">
-        <span class="pushIcon"></span>
-        <span class="pushWord">下拉加载更多</span>
+                <div class="of-h6 grey"></div>
+            </li>
+
+            <li>
+                <div class="activity-list">
+                    <div class="activity-tit">
+                        <p>活动标题:聚划算</p>
+
+                        <p class="activity-icon-outdate">可报名</p>
+                    </div>
+                    <div class="activity-list-time activity-space-20">
+                        <p>开始时间:<span>2015-10-01</span></p>
+
+                        <p>结束时间:<span>2015-10-11</span></p>
+                    </div>
+                </div>
+                <div class="of-h6 grey"></div>
+            </li>
+
+            <li>
+                <div class="activity-list">
+                    <div class="activity-tit">
+                        <p>活动标题:聚划算</p>
+
+                        <p class="activity-icon-outdate">可报名</p>
+                    </div>
+                    <div class="activity-list-time activity-space-20">
+                        <p>开始时间:<span>2015-10-01</span></p>
+
+                        <p>结束时间:<span>2015-10-11</span></p>
+                    </div>
+                </div>
+                <div class="of-h6 grey"></div>
+            </li>
+            <li>
+                <div class="activity-list">
+                    <div class="activity-tit">
+                        <p>活动标题:聚划算</p>
+
+                        <p class="activity-icon-outdate">可报名</p>
+                    </div>
+                    <div class="activity-list-time activity-space-20">
+                        <p>开始时间:<span>2015-10-01</span></p>
+
+                        <p>结束时间:<span>2015-10-11</span></p>
+                    </div>
+                </div>
+                <div class="of-h6 grey"></div>
+            </li>
+        </ul>
+        <div class="push">
+            <span class="pushIcon"></span>
+            <span class="pushWord">下拉加载更多</span>
+        </div>
     </div>
-</div>
+
+
+<!--</div>-->
 </body>
 <script src="js/common.js" type="text/javascript"></script>
-<script src="js/js.js" type="text/javascript"></script>
 <script src="js/component.js" type="text/javascript"></script>
 <script src="js/push_center.js" type="text/javascript"></script>
-
 <script>
-    var pull = new Pull("moveModule",{
-        "refreshCallBack":function(){
-//            alert("刷新!");
-        },
-        "loadCallBack":function(){
-//            alert("加载更多!");
-        }
-    });
+    var pull = new Pull("moveModule", {
+        "refreshCallBack":function(){},
+        "loadCallBack":function(){}
+    })
 </script>
-<script>
-//    var prevent = new PreventMoveOverScroll({
-//        "styleId":"moveModule"
-//    });
-</script>
-
 </html>

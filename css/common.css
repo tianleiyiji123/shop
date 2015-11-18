@@ -134,14 +134,13 @@ body{font-family: '微软雅黑';}
 .pushIcon{
     width: 30px;
     height: 30px;
-    float: left;
     display: block;
-    background: url("../images/pull-icon.png") no-repeat;
-    background-position: center top;
+    background: url("../images/pull-icon.png")center top no-repeat;
     background-size: 100% 200%;
     margin-top: 6px;
     -webkit-transform: rotate(-180deg);
     -webkit-transition: all 200ms;
+    float: left;
 }
 .pushWord{
     width: 70%;

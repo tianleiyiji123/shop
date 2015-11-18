@@ -3,10 +3,12 @@
     overflow: hidden;
     margin-top: -44px;
     /*margin-bottom: -44px;*/
-    /*-webkit-transform: translateY(0px);*/
+    -webkit-transform: translateY(0);
     /*-webkit-transition: all 300ms ease-in-out;*/
 }
-
+.push-mid-content.active{
+    -webkit-transition: all 300ms ease-in-out;
+}
 .push-mid-content ul li div.push-detail{
     padding: 25px 12px 6px;
     overflow: hidden;
@@ -1033,7 +1035,10 @@ div.push-data{
     background: none;
 }
 
-
+.shopTime{
+    float: right;
+    color: #a6a6a6;
+}
 .check-pop .order_confirm ul  .confirm_tip{
     border-bottom:none;
     height: 125px;

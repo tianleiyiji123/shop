@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="slideUpDownRefresh_files/iscroll.css">
+    <script src="js/jquery.js" type="text/javascript"></script>
+</head>
+<body onload="loaded()">
+    <div class="check-pop">
+        <button class="sub-btn" id="sub-btn">完成</button>
+    </div>
+    <div class="allAlerw">
+        <div class="order-num alerw-1 alerw">
+            <p>请输入订单号</p>
+            <div class="order-text">
+                <input type="text" name="number">
+            </div>
+        </div>
+        <div class="order-start-time alerw-2 alerw">
+            <div class="act-sta-t1 _t1"><span>起始日期&nbsp;&nbsp;&nbsp;&nbsp;2015-11-6</span> <input type="date" id="timeOne"></div>
+            <div class="act-end-t1 _t2"><span >终止日期&nbsp;&nbsp;&nbsp;&nbsp;2015-11-6</span><input type="date" id="timeTwo"></div>
+        </div>
+        <div class="order-end-time alerw-3 alerw">
+            <div class="act-sta-t2 _t1"><span>起始日期&nbsp;&nbsp;&nbsp;&nbsp;2015-11-6</span><input type="date" id="timeThree"></div>
+            <div class="act-end-t2 _t2"><span>终止日期&nbsp;&nbsp;&nbsp;&nbsp;2015-11-6</span><input type="date" id="timeFour"></div>
+        </div>
+        <div class="order-time-alerw alerw-4 alerw">
+            <ul id="time-index">
+                <li>当期</li>
+                <li>已确认</li>
+                <li>未确认</li>
+                <li>已完成</li>
+            </ul>
+        </div>
+    </div>
+    <div class="header">
+        <a class="head-left"></a>
+        <p class="head-mid-word">未确认订单列表</p>
+    </div>
+    <div class="of-h44"></div>
+
+    <div class="order-tab">
+        <ul class="nav-tab">
+            <li onclick="popBg()">
+                <a>订单号</a>
+            </li>
+            <li onclick="popBg()">
+                <a>产生日期</a>
+            </li>
+            <li onclick="popBg()">
+                <a>发货日期</a>
+            </li>
+            <li id="actTime">
+                <a>订单状态</a>
+            </li>
+        </ul>
+        <div></div>
+    </div>
+    <div class="of-h47"></div>
+    <div id="wrapper" style="overflow: scroll!important;">
+        <div id="scroller">
+            <div id="scroller-pullDown">
+                <span id="down-icon" class="icon-double-angle-down pull-down-icon"></span>
+                <span id="pullDown-msg" class="pull-down-msg">下拉刷新</span>
+            </div>
+            <div id="scroller-content">
+                <ul class="order-nav" id="list">
+                    <li>
+                        <div class="order-con" id="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                    <li>
+                        <div class="order-con">
+                            <h3><span>订单号：</span><span>1234567890</span></h3>
+                            <p><span>订单产生日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><span>发货日期：</span><span>2015-11-11 12:00:00</span></p>
+                            <p><em>订单状态：</em><em>未确认</em></p>
+                        </div>
+                        <div class="of-h6 grey"></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="scroller-pullUp">
+                <span id="up-icon" class="icon-double-angle-up pull-up-icon"></span>
+                <span id="pullUp-msg" class="pull-up-msg">上拉刷新</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="slideUpDownRefresh_files/jquery.min.js"></script>
+    <script type="text/javascript" src="slideUpDownRefresh_files/iscroll.js"></script>
+    <script type="text/javascript">
+        function loaded () {
+            var myScroll,
+                    upIcon = $("#up-icon"),
+                    downIcon = $("#down-icon");
+
+            myScroll = new IScroll('#wrapper', { probeType: 3, mouseWheel: true });
+
+            myScroll.on("scroll",function(){
+                var y = this.y,
+                        maxY = this.maxScrollY - y,
+                        downHasClass = downIcon.hasClass("reverse_icon"),
+                        upHasClass = upIcon.hasClass("reverse_icon");
+
+                if(y >= 40){
+                    !downHasClass && downIcon.addClass("reverse_icon");
+                    return "";
+                }else if(y < 40 && y > 0){
+                    downHasClass && downIcon.removeClass("reverse_icon");
+                    return "";
+                }
+
+                if(maxY >= 40){
+                    !upHasClass && upIcon.addClass("reverse_icon");
+                    return "";
+                }else if(maxY < 40 && maxY >=0){
+                    upHasClass && upIcon.removeClass("reverse_icon");
+                    return "";
+                }
+            });
+
+            myScroll.on("slideDown",function(){
+                if(this.y > 40){
+                    //alert("slideDown");
+                    upIcon.removeClass("reverse_icon")
+                }
+            });
+
+            myScroll.on("slideUp",function(){
+                if(this.maxScrollY - this.y > 40){
+                    //alert("slideUp");
+                    upIcon.removeClass("reverse_icon")
+                }
+            });
+        }
+
+    </script>
+</body>
+<script src="js/common.js" type="text/javascript"></script>
+
+<script src="js/push_center.js" type="text/javascript"></script>
+
+</html>

@@ -6,16 +6,9 @@
     var Pull = function (container, params) {
         if (!(this instanceof Pull)) return new Pull(container, params);
         var s = this;
-        var defaultInit = {
-            containH: 44
-        };
-
         params = params || {};
-        s.mergeObj(params,defaultInit);
-
 
         s.params = params;
-
 
         this.container = container;
 
@@ -29,12 +22,13 @@
                 refreshBool = true,     //刷新bool控制
                 loadBool = true,     //刷新bool控制
                 rotateBool = true,      //旋转bool控制
-                pullUpBool = true;      //上拉更新bool控制
+                pullUpBool = true,      //上拉更新bool控制
+                topBool = true,        //是否拉倒顶了
+                module = document.getElementById(this.container);
 
-
-            document.getElementById(this.container).addEventListener("touchmove", touchMove, false);         //监听移动
-            document.getElementById(this.container).addEventListener("touchstart", touchStart, false);       //监听触摸开始
-            document.getElementById(this.container).addEventListener("touchend", touchEnd, false);           //监听触摸结束
+            module.addEventListener("touchmove", touchMove, false);         //监听移动
+            module.addEventListener("touchstart", touchStart, false);       //监听触摸开始
+            module.addEventListener("touchend", touchEnd, false);           //监听触摸结束
 
             /**
              * 触摸开始
@@ -44,6 +38,7 @@
                 var e = event || window.event,
                     touch = e.touches[0];
                 //e.preventDefault();
+                e.stopPropagation();
                 startX = touch.pageX;
                 startY = touch.pageY;
             }
@@ -55,31 +50,36 @@
             function touchMove(event) {
                 var e = event || window.event,
                     touch = e.touches[0];
+                //e.preventDefault();
+                e.stopPropagation();
                 x = touch.pageX - startX;
                 y = touch.pageY - startY;
                 absX = Math.abs(x);
                 absY = Math.abs(y);
-
-
-                //if (y < 0) {
-                //    if ($(document).scrollTop() == 0) {
+                //if($(window).height()>=$(document).height() - $(document).scrollTop()){
+                //    if(y<0){
                 //        e.preventDefault();
-                //        document.removeEventListener("touchmove", function (event) {
-                //            event.preventDefault();
-                //        }, false);
                 //    }
-                //} else {
-                //    if ($(document).scrollTop() == 0) {
-                //        //e.preventDefault();
-                //        document.removeEventListener("touchmove", function (event) {
-                //            event.preventDefault();
-                //        }, false);
+                //}else if($(document).scrollTop() == 0){
+                //    if(y>0){
+                //        e.preventDefault();
                 //    }
                 //}
+                //if(topBool){
+                if ($(document).scrollTop() == 0) {
+                    if (y > 0) {
+                        //$(".activity-icon-hassign").html(y);
+                        e.preventDefault();
+                    }
+                    setTimeout(function () {
+                        pullDown();
+                    }, 1)
+                }
+                //}
 
-
-                pullDown();
-                pullUp();
+            if(y<0){
+                pullUp(e);
+            }
             }
 
             /**
@@ -88,10 +88,16 @@
              */
             function touchEnd(event) {
                 var e = event || window.event;
-                $("#" + s.container).animate({
-                    "marginTop": -s.params.containH,
-                    "marginBottom": 0
-                }, 200, "linear");
+                e.stopPropagation();
+                //$("#" + s.container).animate({
+                //    "webkitTransform": "translateY(0px)"
+                //    //"marginBottom": 0
+                //}, 200, "linear",function(){
+                //    $("#" + s.container).removeClass("active");
+                //});
+                $("#" + s.container).addClass("active").css({
+                    "webkitTransform": "translateY("+(0)+"px)"
+                });
 
                 $(".pullIcon").css({
                     "webkitTransform": "rotate(0deg)"
@@ -120,6 +126,10 @@
                 loadBool = true;
                 rotateBool = true;
                 pullUpBool = true;
+                //topBool = true;
+                if ($(document).scrollTop() == 0) {
+                    e.preventDefault();
+                }
             }
 
             /**
@@ -128,7 +138,7 @@
              */
             function pullDown() {
                 if (y > 0) {
-                    $("#" + s.container).css("margin-top", y / 3 - s.params.containH);
+                    $("#" + s.container).removeClass("active").css("webkitTransform", "translateY("+(y / 3 )+"px)");
                     if (y > 160 && y < 200) {
                         if (rotateBool == true) {
                             rotateBool = false;
@@ -146,13 +156,15 @@
              * 加载更多实现回弹效果
              *
              */
-            function pullUp() {
+            function pullUp(e) {
                 var winH = $(window).height(),
                     scrollTop = $(document).scrollTop(),
                     domH = $(document).height();
                 if (winH + scrollTop == domH) {
                     if (y < 0) {
-                        $("#" + s.container).css("margin-bottom", absY / 3);
+                        e.preventDefault();
+                        $("#" + s.container).removeClass("active").css("webkitTransform","translateY("+(-absY / 3)+ "px)");
+
                         if (absY > 70) {
                             if (pullUpBool == true) {
                                 pullUpBool = false;
@@ -196,18 +208,8 @@
     Pull.prototype = {
         getType: function (obj) {
             return Object.prototype.toString.call(obj).toLocaleLowerCase().replace(/\[|\]/g, "").split(" ")[1];
-        },
-        mergeObj: function (obj1, obj2) {
-            if(this.getType(obj1) == "object" && this.getType(obj2) == "object"){
-                for(var i in obj2){
-                    obj1[i] = obj2[i];
-                }
-            }
-            return obj1;
         }
-
     };
-
 
     window.Pull = Pull;
 })(jQuery);
